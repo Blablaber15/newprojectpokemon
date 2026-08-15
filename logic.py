@@ -70,13 +70,13 @@ class Pokemon:
             return f"Здоровье покемона увеличено. Текущее здоровье: {self.hp}"
         else:
             return f"Следующее время кормления покемона: {self.last_feed_time+delta_time}" #4 ошибка: current_time+delta_time
-
+#команда о классе wizard
 class Wizard(Pokemon):
     def info(self):
         return super().info()+"Твой покемон имеет клас волшебника"
     def feed(self):
         return super().feed(hp_increase= 20)
-
+#команда о классе fighter
 class Fighter(Pokemon):
     def attack(self, enemy):
         superpower = randint(5,15)
@@ -88,12 +88,12 @@ class Fighter(Pokemon):
         return super().info()+"Твой покемон имеет класс бойца"
     def feed(self):
         return super().feed(feed_interval=10)
-if __name__ == '__main__':
-    wizard = Wizard("username1")
-    fighter = Fighter("username2")
+# if __name__ == '__main__':
+#     wizard = Wizard("username1")
+#     fighter = Fighter("username2")
 
-    print(wizard.info())
-    print()
-    print(fighter.info())
-    print()
-    print(fighter.attack(wizard))
+#     print(wizard.info())
+#     print()
+#     print(fighter.info())
+#     print()
+#     print(fighter.attack(wizard))
